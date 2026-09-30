@@ -1,0 +1,6019 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="theme-color"
+    content="#fff4f7"
+>
+
+<meta
+    name="apple-mobile-web-app-capable"
+    content="yes"
+>
+
+<meta
+    name="apple-mobile-web-app-status-bar-style"
+    content="default"
+>
+
+<title>
+    Note Laeli Nurhidayah — Manajemen Pribadi
+</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link
+    rel="preconnect"
+    href="https://fonts.gstatic.com"
+    crossorigin
+>
+
+<link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+>
+
+
+<style>
+
+/* =========================================================
+   ROOT
+========================================================= */
+
+:root{
+
+    --bg:#fff8f7;
+    --card:#ffffff;
+    --ink:#49363d;
+    --muted:#a0878f;
+
+    --pink:#ed91ad;
+    --pink-dark:#cf6f91;
+    --pink2:#fbd8e3;
+    --pink3:#fff0f4;
+
+    --rose:#b75f7d;
+
+    --green:#77a48d;
+    --red:#d5797b;
+    --yellow:#e6b86b;
+
+    --line:#f1e2e6;
+
+    --shadow:
+        0 14px 40px rgba(113,72,85,.09);
+
+    --shadow-hover:
+        0 20px 50px rgba(113,72,85,.15);
+
+    --radius:22px;
+
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+*{
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    margin:0;
+
+    min-height:100vh;
+
+    background:
+        radial-gradient(
+            circle at 5% 0,
+            #ffe8ef 0,
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 100% 20%,
+            #ffeef4 0,
+            transparent 25%
+        ),
+        linear-gradient(
+            135deg,
+            #fffaf9,
+            #fff3f6
+        );
+
+    color:var(--ink);
+
+    font-family:
+        "DM Sans",
+        sans-serif;
+
+    overflow-x:hidden;
+
+}
+
+
+/* =========================================================
+   SELECTION
+========================================================= */
+
+::selection{
+    background:var(--pink2);
+    color:var(--ink);
+}
+
+
+/* =========================================================
+   INPUT
+========================================================= */
+
+button,
+input,
+select,
+textarea{
+    font:inherit;
+}
+
+button{
+    cursor:pointer;
+    -webkit-tap-highlight-color:transparent;
+}
+
+input,
+select,
+textarea{
+    -webkit-appearance:none;
+    appearance:none;
+}
+
+
+/* =========================================================
+   DECORATION
+========================================================= */
+
+.decor{
+    position:fixed;
+
+    pointer-events:none;
+
+    z-index:-1;
+
+    opacity:.45;
+
+    animation:
+        floating 7s ease-in-out infinite;
+}
+
+.decor.one{
+    top:12%;
+    left:2%;
+    font-size:34px;
+}
+
+.decor.two{
+    top:40%;
+    right:3%;
+    font-size:27px;
+    animation-delay:1.5s;
+}
+
+.decor.three{
+    bottom:12%;
+    left:4%;
+    font-size:24px;
+    animation-delay:3s;
+}
+
+@keyframes floating{
+
+    0%,
+    100%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50%{
+        transform:
+            translateY(-14px)
+            rotate(8deg);
+    }
+
+}
+
+
+/* =========================================================
+   APP
+========================================================= */
+
+.app{
+
+    width:min(
+        1280px,
+        100%
+    );
+
+    margin:auto;
+
+    padding:
+        22px
+        20px
+        50px;
+
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+
+.top{
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:space-between;
+
+    gap:20px;
+
+    margin-bottom:20px;
+
+    animation:
+        slideDown .6s ease both;
+
+}
+
+@keyframes slideDown{
+
+    from{
+        opacity:0;
+        transform:translateY(-15px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+.brand{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+
+    min-width:0;
+
+}
+
+.logo{
+
+    width:52px;
+    height:52px;
+
+    flex:0 0 52px;
+
+    border-radius:18px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #ffe3ec,
+            #fbd0dd
+        );
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:25px;
+
+    box-shadow:var(--shadow);
+
+    animation:
+        logoFloat 4s ease-in-out infinite;
+
+}
+
+@keyframes logoFloat{
+
+    0%,
+    100%{
+        transform:rotate(0deg);
+    }
+
+    50%{
+        transform:rotate(5deg) scale(1.04);
+    }
+
+}
+
+.brand h1{
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:27px;
+
+    margin:0;
+
+    line-height:1.15;
+
+}
+
+.brand p{
+
+    margin:3px 0 0;
+
+    font-size:12px;
+
+    color:var(--muted);
+
+}
+
+.month{
+
+    border:1px solid var(--line);
+
+    background:
+        rgba(255,255,255,.85);
+
+    border-radius:15px;
+
+    padding:10px 14px;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    white-space:nowrap;
+
+    box-shadow:
+        0 6px 20px rgba(113,72,85,.05);
+
+}
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+
+.layout{
+
+    display:grid;
+
+    grid-template-columns:
+        235px
+        minmax(0,1fr);
+
+    gap:18px;
+
+}
+
+
+/* =========================================================
+   SIDEBAR
+========================================================= */
+
+.side{
+
+    background:
+        rgba(255,255,255,.82);
+
+    border:1px solid var(--line);
+
+    border-radius:25px;
+
+    padding:15px;
+
+    height:max-content;
+
+    position:sticky;
+
+    top:15px;
+
+    box-shadow:
+        0 12px 35px
+        rgba(113,72,85,.05);
+
+    backdrop-filter:
+        blur(12px);
+
+}
+
+.nav{
+
+    display:grid;
+
+    gap:6px;
+
+}
+
+.nav button{
+
+    border:0;
+
+    background:transparent;
+
+    text-align:left;
+
+    padding:12px 13px;
+
+    border-radius:14px;
+
+    color:var(--muted);
+
+    font-weight:600;
+
+    transition:
+        background .2s ease,
+        color .2s ease,
+        transform .2s ease;
+
+}
+
+.nav button:hover{
+
+    background:#fff5f8;
+
+    color:var(--rose);
+
+    transform:
+        translateX(2px);
+
+}
+
+.nav button.active{
+
+    background:
+        linear-gradient(
+            135deg,
+            #fff0f4,
+            #ffe5ee
+        );
+
+    color:var(--rose);
+
+    box-shadow:
+        0 5px 16px
+        rgba(237,145,173,.08);
+
+}
+
+.nav button:active{
+
+    transform:
+        scale(.96);
+
+}
+
+
+/* =========================================================
+   SIDE BOX
+========================================================= */
+
+.sidebox{
+
+    margin-top:20px;
+
+    padding:15px;
+
+    border-radius:19px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #fff1f5,
+            #fff
+        );
+
+    border:1px solid var(--line);
+
+}
+
+.sidebox b{
+
+    display:block;
+
+    font-size:20px;
+
+    margin-top:4px;
+
+}
+
+
+/* =========================================================
+   PROGRESS
+========================================================= */
+
+.progress{
+
+    height:8px;
+
+    background:#f5e5e9;
+
+    border-radius:10px;
+
+    overflow:hidden;
+
+    margin:10px 0 6px;
+
+}
+
+.progress span{
+
+    display:block;
+
+    width:0;
+
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--pink),
+            #f5aec4
+        );
+
+    border-radius:10px;
+
+    transition:
+        width .8s cubic-bezier(.22,1,.36,1);
+
+}
+
+
+/* =========================================================
+   MAIN
+========================================================= */
+
+.main{
+
+    min-width:0;
+
+}
+
+.page{
+
+    display:none;
+
+}
+
+.page.active{
+
+    display:block;
+
+    animation:
+        pageIn .35s ease both;
+
+}
+
+@keyframes pageIn{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(8px);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero{
+
+    background:
+        linear-gradient(
+            120deg,
+            #fff,
+            #ffe6ef
+        );
+
+    border:1px solid var(--line);
+
+    border-radius:26px;
+
+    padding:23px;
+
+    position:relative;
+
+    overflow:hidden;
+
+    margin-bottom:16px;
+
+    box-shadow:var(--shadow);
+
+}
+
+.hero:before{
+
+    content:"";
+
+    position:absolute;
+
+    width:170px;
+    height:170px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.55);
+
+    right:-70px;
+    top:-80px;
+
+}
+
+.hero:after{
+
+    content:"✿";
+
+    position:absolute;
+
+    right:28px;
+
+    bottom:-30px;
+
+    font-size:120px;
+
+    color:#fff;
+
+    opacity:.75;
+
+    animation:
+        heroFlower 6s ease-in-out infinite;
+
+}
+
+@keyframes heroFlower{
+
+    0%,
+    100%{
+        transform:rotate(0deg);
+    }
+
+    50%{
+        transform:rotate(8deg);
+    }
+
+}
+
+.hero h2{
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:25px;
+
+    margin:0 0 6px;
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+.hero p{
+
+    margin:0;
+
+    color:var(--muted);
+
+    font-size:13px;
+
+    max-width:620px;
+
+    line-height:1.7;
+
+    position:relative;
+
+    z-index:1;
+
+}
+
+
+/* =========================================================
+   CARDS
+========================================================= */
+
+.cards{
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(4,1fr);
+
+    gap:12px;
+
+    margin-bottom:16px;
+
+}
+
+.card{
+
+    background:
+        rgba(255,255,255,.9);
+
+    border:1px solid var(--line);
+
+    border-radius:22px;
+
+    padding:17px;
+
+    box-shadow:var(--shadow);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+
+}
+
+.card:hover{
+
+    transform:
+        translateY(-3px);
+
+    box-shadow:
+        var(--shadow-hover);
+
+    border-color:
+        #edc7d2;
+
+}
+
+.metric .label{
+
+    font-size:12px;
+
+    color:var(--muted);
+
+}
+
+.metric .value{
+
+    font-size:21px;
+
+    font-weight:700;
+
+    margin-top:5px;
+
+    transition:
+        transform .25s ease;
+
+}
+
+.metric:hover .value{
+
+    transform:
+        scale(1.03);
+
+}
+
+.label{
+
+    font-size:12px;
+
+    color:var(--muted);
+
+}
+
+.green{
+    color:var(--green);
+}
+
+.red{
+    color:var(--red);
+}
+
+.pink{
+    color:var(--rose);
+}
+
+
+/* =========================================================
+   GRID
+========================================================= */
+
+.grid2{
+
+    display:grid;
+
+    grid-template-columns:
+        1.15fr
+        .85fr;
+
+    gap:16px;
+
+}
+
+
+/* =========================================================
+   TITLE
+========================================================= */
+
+.title{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+    margin-bottom:14px;
+
+}
+
+.title h3{
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:20px;
+
+    margin:0;
+
+}
+
+.kecil{
+
+    font-size:11px;
+
+    color:var(--muted);
+
+}
+
+
+/* =========================================================
+   BUTTON
+========================================================= */
+
+.btn{
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--pink),
+            #e988a8
+        );
+
+    color:#fff;
+
+    border:0;
+
+    border-radius:13px;
+
+    padding:10px 13px;
+
+    font-weight:700;
+
+    transition:
+        transform .18s ease,
+        box-shadow .18s ease,
+        filter .18s ease;
+
+    box-shadow:
+        0 7px 18px
+        rgba(237,145,173,.18);
+
+}
+
+.btn:hover{
+
+    transform:
+        translateY(-2px);
+
+    filter:brightness(.98);
+
+    box-shadow:
+        0 10px 22px
+        rgba(237,145,173,.25);
+
+}
+
+.btn:active{
+
+    transform:
+        translateY(1px)
+        scale(.97);
+
+    box-shadow:
+        0 4px 10px
+        rgba(237,145,173,.14);
+
+}
+
+.btn.muda{
+
+    background:
+        var(--pink3);
+
+    color:var(--rose);
+
+    box-shadow:none;
+
+}
+
+.btn.muda:hover{
+
+    background:
+        var(--pink2);
+
+}
+
+
+/* =========================================================
+   LIST
+========================================================= */
+
+.list{
+
+    display:grid;
+
+    gap:9px;
+
+}
+
+.item{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+    padding:12px;
+
+    border:1px solid var(--line);
+
+    border-radius:16px;
+
+    background:#fffafb;
+
+    transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+
+}
+
+.item:hover{
+
+    transform:
+        translateX(3px);
+
+    background:#fff7f9;
+
+    box-shadow:
+        0 6px 18px
+        rgba(113,72,85,.06);
+
+}
+
+.kiri{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:10px;
+
+    min-width:0;
+
+}
+
+.ikon{
+
+    width:38px;
+    height:38px;
+
+    flex:0 0 38px;
+
+    border-radius:13px;
+
+    background:var(--pink3);
+
+    display:grid;
+
+    place-items:center;
+
+}
+
+.item h4{
+
+    font-size:13px;
+
+    margin:0 0 2px;
+
+}
+
+.item p{
+
+    font-size:11px;
+
+    color:var(--muted);
+
+    margin:0;
+
+    line-height:1.5;
+
+}
+
+.uang{
+
+    font-weight:700;
+
+    font-size:13px;
+
+    white-space:nowrap;
+
+}
+
+.hapus{
+
+    border:0;
+
+    background:transparent;
+
+    color:#c6a6af;
+
+    font-size:19px;
+
+    width:30px;
+    height:30px;
+
+    border-radius:9px;
+
+    transition:
+        background .2s,
+        color .2s,
+        transform .2s;
+
+}
+
+.hapus:hover{
+
+    background:#fff0f3;
+
+    color:var(--red);
+
+}
+
+.hapus:active{
+
+    transform:
+        scale(.85);
+
+}
+
+
+/* =========================================================
+   BAR CHART
+========================================================= */
+
+.batang{
+
+    display:grid;
+
+    gap:12px;
+
+}
+
+.baris-batang .bagian-atas{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    font-size:12px;
+
+    margin-bottom:6px;
+
+}
+
+.batang-luar{
+
+    height:9px;
+
+    background:#f5e8eb;
+
+    border-radius:20px;
+
+    overflow:hidden;
+
+}
+
+.batang-dalam{
+
+    display:block;
+
+    width:0;
+
+    height:100%;
+
+    background:
+        linear-gradient(
+            90deg,
+            var(--pink),
+            #f5b5c9
+        );
+
+    border-radius:20px;
+
+    transition:
+        width .9s cubic-bezier(.22,1,.36,1);
+
+}
+
+
+/* =========================================================
+   FORM
+========================================================= */
+
+.form{
+
+    display:grid;
+
+    gap:10px;
+
+}
+
+.field{
+
+    display:grid;
+
+    gap:5px;
+
+}
+
+.field label{
+
+    font-size:11px;
+
+    color:var(--muted);
+
+}
+
+input,
+select,
+textarea{
+
+    width:100%;
+
+    border:1px solid var(--line);
+
+    background:#fff;
+
+    border-radius:13px;
+
+    padding:11px 12px;
+
+    color:var(--ink);
+
+    outline:0;
+
+    transition:
+        border-color .2s,
+        box-shadow .2s,
+        transform .15s;
+
+}
+
+input:focus,
+select:focus,
+textarea:focus{
+
+    border-color:var(--pink);
+
+    box-shadow:
+        0 0 0 3px
+        rgba(237,145,173,.1);
+
+}
+
+input:active,
+select:active,
+textarea:active{
+
+    transform:
+        scale(.998);
+
+}
+
+textarea{
+
+    min-height:110px;
+
+    resize:vertical;
+
+}
+
+.dua{
+
+    display:grid;
+
+    grid-template-columns:
+        1fr
+        1fr;
+
+    gap:9px;
+
+}
+
+
+/* =========================================================
+   SKINCARE
+========================================================= */
+
+.produk{
+
+    display:flex;
+
+    gap:12px;
+
+    align-items:center;
+
+    padding:12px;
+
+    border:1px solid var(--line);
+
+    border-radius:17px;
+
+    transition:
+        transform .2s,
+        background .2s;
+
+}
+
+.produk:hover{
+
+    transform:
+        translateY(-2px);
+
+    background:#fff8fa;
+
+}
+
+.botol{
+
+    width:45px;
+    height:55px;
+
+    flex:0 0 45px;
+
+    border-radius:12px;
+
+    background:
+        linear-gradient(
+            #fff,
+            #f9cbd9
+        );
+
+    display:grid;
+
+    place-items:center;
+
+    font-size:20px;
+
+    box-shadow:
+        inset 0 0 0 1px
+        rgba(183,95,125,.04);
+
+}
+
+.produk h4{
+
+    margin:0 0 3px;
+
+    font-size:13px;
+
+}
+
+.produk p{
+
+    margin:0;
+
+    color:var(--muted);
+
+    font-size:11px;
+
+    line-height:1.5;
+
+}
+
+.badge{
+
+    font-size:10px;
+
+    padding:5px 8px;
+
+    border-radius:10px;
+
+    background:var(--pink3);
+
+    color:var(--rose);
+
+    white-space:nowrap;
+
+}
+
+.ceklis{
+
+    accent-color:var(--pink);
+
+    width:18px;
+    height:18px;
+
+}
+
+
+/* =========================================================
+   EMPTY
+========================================================= */
+
+.kosong{
+
+    text-align:center;
+
+    color:#b49ca2;
+
+    padding:24px;
+
+    font-size:12px;
+
+    line-height:1.7;
+
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+.modal{
+
+    display:none;
+
+    position:fixed;
+
+    inset:0;
+
+    background:
+        rgba(72,48,57,.28);
+
+    align-items:center;
+
+    justify-content:center;
+
+    padding:20px;
+
+    z-index:100;
+
+    backdrop-filter:
+        blur(4px);
+
+}
+
+.modal.tampil{
+
+    display:flex;
+
+    animation:
+        modalBg .2s ease both;
+
+}
+
+@keyframes modalBg{
+
+    from{
+        opacity:0;
+    }
+
+    to{
+        opacity:1;
+    }
+
+}
+
+.modal-box{
+
+    width:min(
+        520px,
+        100%
+    );
+
+    background:#fff;
+
+    border-radius:25px;
+
+    padding:20px;
+
+    box-shadow:
+        0 30px 80px
+        rgba(60,30,40,.2);
+
+    max-height:90vh;
+
+    overflow:auto;
+
+    animation:
+        modalIn .3s
+        cubic-bezier(.22,1,.36,1)
+        both;
+
+}
+
+@keyframes modalIn{
+
+    from{
+        opacity:0;
+        transform:
+            translateY(25px)
+            scale(.96);
+    }
+
+    to{
+        opacity:1;
+        transform:none;
+    }
+
+}
+
+.modal-atas{
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:10px;
+
+}
+
+.tutup{
+
+    background:var(--pink3);
+
+    color:var(--rose);
+
+    border:0;
+
+    border-radius:12px;
+
+    width:35px;
+
+    height:35px;
+
+    flex:0 0 35px;
+
+    font-size:20px;
+
+    transition:
+        transform .2s,
+        background .2s;
+
+}
+
+.tutup:hover{
+
+    background:var(--pink2);
+
+    transform:
+        rotate(5deg);
+
+}
+
+.tutup:active{
+
+    transform:
+        scale(.9);
+
+}
+
+
+/* =========================================================
+   TOAST
+========================================================= */
+
+.toast{
+
+    position:fixed;
+
+    right:18px;
+
+    bottom:18px;
+
+    max-width:
+        calc(100vw - 36px);
+
+    background:
+        rgba(73,54,61,.95);
+
+    color:#fff;
+
+    padding:12px 15px;
+
+    border-radius:14px;
+
+    opacity:0;
+
+    transform:
+        translateY(15px)
+        scale(.97);
+
+    transition:
+        opacity .25s,
+        transform .25s;
+
+    pointer-events:none;
+
+    z-index:200;
+
+    box-shadow:
+        0 12px 30px
+        rgba(50,30,40,.2);
+
+    font-size:13px;
+
+}
+
+.toast.tampil{
+
+    opacity:1;
+
+    transform:none;
+
+}
+
+
+/* =========================================================
+   MOBILE BOTTOM NAV
+========================================================= */
+
+.mobile-nav{
+
+    display:none;
+
+}
+
+
+/* =========================================================
+   RIPPLE
+========================================================= */
+
+.ripple{
+
+    position:absolute;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,255,255,.45);
+
+    transform:
+        scale(0);
+
+    animation:
+        ripple .5s linear;
+
+    pointer-events:none;
+
+}
+
+@keyframes ripple{
+
+    to{
+        transform:scale(4);
+        opacity:0;
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE TABLET
+========================================================= */
+
+@media(max-width:1000px){
+
+    .app{
+
+        padding:
+            18px
+            15px
+            40px;
+
+    }
+
+    .layout{
+
+        grid-template-columns:
+            190px
+            minmax(0,1fr);
+
+    }
+
+    .cards{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+}
+
+
+/* =========================================================
+   RESPONSIVE 900
+========================================================= */
+
+@media(max-width:900px){
+
+    body{
+
+        padding-bottom:85px;
+
+    }
+
+    .app{
+
+        padding:
+            15px
+            12px
+            100px;
+
+    }
+
+    .layout{
+
+        display:block;
+
+    }
+
+    .side{
+
+        display:none;
+
+    }
+
+    .grid2{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .cards{
+
+        grid-template-columns:
+            repeat(2,1fr);
+
+    }
+
+    .mobile-nav{
+
+        position:fixed;
+
+        display:grid;
+
+        grid-template-columns:
+            repeat(5,1fr);
+
+        left:10px;
+        right:10px;
+        bottom:10px;
+
+        z-index:90;
+
+        padding:7px;
+
+        background:
+            rgba(255,255,255,.9);
+
+        border:
+            1px solid
+            rgba(241,226,230,.9);
+
+        border-radius:22px;
+
+        box-shadow:
+            0 15px 45px
+            rgba(85,50,62,.16);
+
+        backdrop-filter:
+            blur(18px);
+
+    }
+
+    .mobile-nav button{
+
+        border:0;
+
+        background:transparent;
+
+        color:#a0878f;
+
+        padding:8px 3px;
+
+        border-radius:15px;
+
+        font-size:10px;
+
+        font-weight:600;
+
+        display:flex;
+
+        flex-direction:column;
+
+        align-items:center;
+
+        gap:3px;
+
+        transition:
+            background .2s,
+            color .2s,
+            transform .2s;
+
+    }
+
+    .mobile-nav button .nav-icon{
+
+        font-size:19px;
+
+        line-height:1;
+
+    }
+
+    .mobile-nav button.active{
+
+        color:var(--rose);
+
+        background:
+            var(--pink3);
+
+    }
+
+    .mobile-nav button:active{
+
+        transform:
+            scale(.9);
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE 600
+========================================================= */
+
+@media(max-width:600px){
+
+    .top{
+
+        align-items:flex-start;
+
+        margin-bottom:14px;
+
+    }
+
+    .brand{
+
+        gap:9px;
+
+    }
+
+    .logo{
+
+        width:45px;
+        height:45px;
+
+        flex-basis:45px;
+
+        border-radius:15px;
+
+        font-size:21px;
+
+    }
+
+    .brand h1{
+
+        font-size:21px;
+
+    }
+
+    .brand p{
+
+        font-size:10px;
+
+        max-width:
+            250px;
+
+        line-height:1.4;
+
+    }
+
+    .month{
+
+        display:none;
+
+    }
+
+    .hero{
+
+        padding:18px;
+
+        border-radius:22px;
+
+    }
+
+    .hero h2{
+
+        font-size:22px;
+
+    }
+
+    .hero p{
+
+        font-size:12px;
+
+    }
+
+    .cards{
+
+        gap:8px;
+
+    }
+
+    .card{
+
+        padding:13px;
+
+        border-radius:18px;
+
+    }
+
+    .metric .label{
+
+        font-size:10px;
+
+    }
+
+    .metric .value{
+
+        font-size:16px;
+
+    }
+
+    .title{
+
+        align-items:flex-start;
+
+    }
+
+    .title h3{
+
+        font-size:18px;
+
+    }
+
+    .btn{
+
+        padding:9px 10px;
+
+        font-size:11px;
+
+    }
+
+    .dua{
+
+        grid-template-columns:
+            1fr;
+
+    }
+
+    .item{
+
+        padding:10px;
+
+    }
+
+    .item h4{
+
+        font-size:12px;
+
+    }
+
+    .item p{
+
+        font-size:10px;
+
+    }
+
+    .uang{
+
+        font-size:11px;
+
+    }
+
+    .produk{
+
+        padding:10px;
+
+        gap:9px;
+
+    }
+
+    .botol{
+
+        width:40px;
+        height:48px;
+
+        flex-basis:40px;
+
+        font-size:18px;
+
+    }
+
+    .produk h4{
+
+        font-size:12px;
+
+    }
+
+    .produk p{
+
+        font-size:10px;
+
+    }
+
+    .badge{
+
+        font-size:9px;
+
+        padding:4px 6px;
+
+    }
+
+    .modal{
+
+        align-items:flex-end;
+
+        padding:0;
+
+    }
+
+    .modal-box{
+
+        width:100%;
+
+        max-height:
+            92vh;
+
+        border-radius:
+            25px
+            25px
+            0
+            0;
+
+        padding:
+            18px
+            15px
+            calc(
+                18px +
+                env(safe-area-inset-bottom)
+            );
+
+        animation:
+            modalMobileIn
+            .3s
+            cubic-bezier(.22,1,.36,1)
+            both;
+
+    }
+
+    @keyframes modalMobileIn{
+
+        from{
+            opacity:0;
+            transform:
+                translateY(40px);
+        }
+
+        to{
+            opacity:1;
+            transform:none;
+        }
+
+    }
+
+    input,
+    select,
+    textarea{
+
+        font-size:16px;
+
+        min-height:46px;
+
+    }
+
+    textarea{
+
+        min-height:120px;
+
+    }
+
+    .toast{
+
+        left:15px;
+
+        right:15px;
+
+        bottom:88px;
+
+        text-align:center;
+
+    }
+
+}
+
+
+/* =========================================================
+   MOBILE 400
+========================================================= */
+
+@media(max-width:400px){
+
+    .app{
+
+        padding-left:9px;
+        padding-right:9px;
+
+    }
+
+    .brand h1{
+
+        font-size:19px;
+
+    }
+
+    .brand p{
+
+        max-width:210px;
+
+    }
+
+    .cards{
+
+        grid-template-columns:
+            1fr 1fr;
+
+    }
+
+    .card{
+
+        padding:11px;
+
+    }
+
+    .metric .value{
+
+        font-size:14px;
+
+    }
+
+    .mobile-nav{
+
+        left:6px;
+        right:6px;
+
+        bottom:6px;
+
+    }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+
+        animation-duration:
+            .01ms !important;
+
+        animation-iteration-count:
+            1 !important;
+
+        scroll-behavior:auto !important;
+
+        transition-duration:
+            .01ms !important;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- DECORATION -->
+
+<div class="decor one">
+    ✿
+</div>
+
+<div class="decor two">
+    ♡
+</div>
+
+<div class="decor three">
+    ✧
+</div>
+
+
+<div class="app">
+
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
+
+<header class="top">
+
+    <div class="brand">
+
+        <div class="logo">
+            🌷
+        </div>
+
+        <div>
+
+            <h1>
+                Note Laeli Nurhidayah
+            </h1>
+
+            <p>
+                ruang kecil untuk mengatur kehidupan,
+                uang, dan kebutuhan pribadi
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div
+        class="month"
+        id="bulan">
+    </div>
+
+</header>
+
+
+
+<div class="layout">
+
+
+<!-- =====================================================
+     SIDEBAR DESKTOP
+===================================================== -->
+
+<aside class="side">
+
+    <nav class="nav">
+
+        <button
+            class="active"
+            data-halaman="beranda">
+
+            🏠<br>
+            Beranda
+
+        </button>
+
+
+        <button
+            data-halaman="keuangan">
+
+            💗<br>
+            Keuangan
+
+        </button>
+
+
+        <button
+            data-halaman="skincare">
+
+            🧴<br>
+            Skincare
+
+        </button>
+
+
+        <button
+            data-halaman="target">
+
+            🎀<br>
+            Target
+
+        </button>
+
+
+        <button
+            data-halaman="catatan">
+
+            🌷<br>
+            Catatan
+
+        </button>
+
+    </nav>
+
+
+    <div class="sidebox">
+
+        <span class="kecil">
+            Anggaran bulan ini
+        </span>
+
+
+        <b id="anggaranSamping">
+            Rp0
+        </b>
+
+
+        <div class="progress">
+
+            <span
+                id="progressSamping">
+            </span>
+
+        </div>
+
+
+        <span
+            class="kecil"
+            id="teksProgressSamping">
+
+            0% digunakan
+
+        </span>
+
+    </div>
+
+</aside>
+
+
+
+<!-- =====================================================
+     MAIN
+===================================================== -->
+
+<main class="main">
+
+
+<!-- =====================================================
+     BERANDA
+===================================================== -->
+
+<section
+    class="page active"
+    id="beranda">
+
+
+    <div class="hero">
+
+        <h2>
+            Selamat datang, Laeli 🌷
+        </h2>
+
+        <p>
+            Ini adalah ruang pribadi untuk membantu
+            mengatur pemasukan, pengeluaran, kebutuhan
+            skincare, target tabungan, wishlist,
+            dan catatan harian dengan lebih rapi.
+        </p>
+
+    </div>
+
+
+
+    <div class="cards">
+
+
+        <div class="card metric">
+
+            <div class="label">
+                Total uang masuk
+            </div>
+
+            <div
+                class="value green"
+                id="uangMasukBeranda">
+
+                Rp0
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card metric">
+
+            <div class="label">
+                Total uang keluar
+            </div>
+
+            <div
+                class="value red"
+                id="uangKeluarBeranda">
+
+                Rp0
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card metric">
+
+            <div class="label">
+                Sisa uang
+            </div>
+
+            <div
+                class="value pink"
+                id="saldoBeranda">
+
+                Rp0
+
+            </div>
+
+        </div>
+
+
+
+        <div class="card metric">
+
+            <div class="label">
+                Anggaran tersisa
+            </div>
+
+            <div
+                class="value"
+                id="anggaranBeranda">
+
+                Rp0
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="grid2">
+
+
+        <div class="card">
+
+            <div class="title">
+
+                <h3>
+                    Ringkasan pengeluaran
+                </h3>
+
+                <span
+                    class="kecil"
+                    id="keteranganPengeluaran">
+                </span>
+
+            </div>
+
+
+            <div
+                class="batang"
+                id="grafikPengeluaran">
+            </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="title">
+
+                <h3>
+                    Perlu diperhatikan
+                </h3>
+
+            </div>
+
+
+            <div
+                class="list"
+                id="perhatian">
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     KEUANGAN
+===================================================== -->
+
+<section
+    class="page"
+    id="keuangan">
+
+
+    <div class="title">
+
+        <h3>
+            Manajemen keuangan
+        </h3>
+
+
+        <button
+            class="btn"
+            onclick="bukaModal('transaksi')">
+
+            ＋ Tambah transaksi
+
+        </button>
+
+    </div>
+
+
+
+    <div class="cards">
+
+
+        <div class="card metric">
+
+            <div class="label">
+                Pemasukan
+            </div>
+
+            <div
+                class="value green"
+                id="uangMasukKeuangan">
+
+                Rp0
+
+            </div>
+
+        </div>
+
+
+        <div class="card metric">
+
+            <div class="label">
+                Pengeluaran
+            </div>
+
+            <div
+                class="value red"
+                id="uangKeluarKeuangan">
+
+                Rp0
+
+            </div>
+
+        </div>
+
+
+        <div class="card metric">
+
+            <div class="label">
+                Saldo
+            </div>
+
+            <div
+                class="value pink"
+                id="saldoKeuangan">
+
+                Rp0
+
+            </div>
+
+        </div>
+
+
+        <div class="card metric">
+
+            <div class="label">
+                Anggaran bulanan
+            </div>
+
+            <div
+                class="value"
+                id="anggaranKeuangan">
+
+                Rp0
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+
+    <div class="grid2">
+
+
+        <div class="card">
+
+            <div class="title">
+
+                <h3>
+                    Riwayat transaksi
+                </h3>
+
+            </div>
+
+
+            <div
+                class="list"
+                id="daftarTransaksi">
+            </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="title">
+
+                <h3>
+                    Anggaran bulan ini
+                </h3>
+
+
+                <button
+                    class="btn muda"
+                    onclick="ubahAnggaran()">
+
+                    Ubah
+
+                </button>
+
+            </div>
+
+
+            <div class="kecil">
+                Anggaran yang ditentukan
+            </div>
+
+
+            <div
+                id="anggaranBesar"
+                style="
+                    font-size:27px;
+                    font-weight:700;
+                    margin:5px 0 10px
+                ">
+
+                Rp0
+
+            </div>
+
+
+            <div class="progress">
+
+                <span
+                    id="progressAnggaran">
+                </span>
+
+            </div>
+
+
+            <div
+                class="kecil"
+                id="teksAnggaran">
+            </div>
+
+
+            <hr
+                style="
+                    border:0;
+                    border-top:1px solid var(--line);
+                    margin:18px 0
+                ">
+
+
+            <div class="kecil">
+                Tips keuangan
+            </div>
+
+
+            <p
+                style="
+                    font-size:12px;
+                    color:var(--muted);
+                    line-height:1.6
+                ">
+
+                Catat semua pengeluaran,
+                termasuk hal kecil seperti jajan,
+                transportasi, skincare, dan belanja
+                supaya kondisi keuangan lebih mudah
+                dipantau.
+
+            </p>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     SKINCARE
+===================================================== -->
+
+<section
+    class="page"
+    id="skincare">
+
+
+    <div class="title">
+
+        <h3>
+            Kebutuhan skincare bulan ini
+        </h3>
+
+
+        <button
+            class="btn"
+            onclick="bukaModal('produk')">
+
+            ＋ Tambah produk
+
+        </button>
+
+    </div>
+
+
+
+    <div class="grid2">
+
+
+        <div class="card">
+
+            <div class="title">
+
+                <h3>
+                    Rak skincare
+                </h3>
+
+                <span class="kecil">
+                    stok & status
+                </span>
+
+            </div>
+
+
+            <div
+                class="list"
+                id="daftarSkincare">
+            </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="title">
+
+                <h3>
+                    Anggaran skincare
+                </h3>
+
+            </div>
+
+
+            <div class="metric">
+
+                <div class="label">
+                    Anggaran bulan ini
+                </div>
+
+
+                <div
+                    class="value pink"
+                    id="anggaranSkincare">
+
+                    Rp0
+
+                </div>
+
+            </div>
+
+
+
+            <div style="margin-top:17px">
+
+                <div class="label">
+                    Sudah digunakan
+                </div>
+
+
+                <div
+                    class="value red"
+                    id="skincareTerpakai">
+
+                    Rp0
+
+                </div>
+
+
+                <div class="progress">
+
+                    <span
+                        id="progressSkincare">
+                    </span>
+
+                </div>
+
+
+                <div
+                    class="kecil"
+                    id="teksSkincare">
+                </div>
+
+            </div>
+
+
+
+            <hr
+                style="
+                    border:0;
+                    border-top:1px solid var(--line);
+                    margin:18px 0
+                ">
+
+
+            <button
+                class="btn muda"
+                onclick="ubahAnggaranSkincare()">
+
+                Atur anggaran skincare
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     TARGET
+===================================================== -->
+
+<section
+    class="page"
+    id="target">
+
+
+    <div class="title">
+
+        <h3>
+            Target & wishlist
+        </h3>
+
+
+        <button
+            class="btn"
+            onclick="bukaModal('target')">
+
+            ＋ Tambah target
+
+        </button>
+
+    </div>
+
+
+
+    <div class="grid2">
+
+
+        <div class="card">
+
+            <div class="title">
+
+                <h3>
+                    Target tabungan
+                </h3>
+
+            </div>
+
+
+            <div
+                class="list"
+                id="daftarTarget">
+            </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="title">
+
+                <h3>
+                    Wishlist
+                </h3>
+
+
+                <button
+                    class="btn muda"
+                    onclick="bukaModal('wishlist')">
+
+                    ＋ Tambah
+
+                </button>
+
+            </div>
+
+
+            <div
+                class="list"
+                id="daftarWishlist">
+            </div>
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+
+<!-- =====================================================
+     CATATAN
+===================================================== -->
+
+<section
+    class="page"
+    id="catatan">
+
+
+    <div class="title">
+
+        <h3>
+            Catatan pribadi
+        </h3>
+
+
+        <button
+            class="btn"
+            onclick="bukaModal('catatan')">
+
+            ＋ Catatan baru
+
+        </button>
+
+    </div>
+
+
+
+    <div class="grid2">
+
+
+        <div class="card">
+
+            <div class="title">
+
+                <h3>
+                    Catatan harian
+                </h3>
+
+            </div>
+
+
+            <div
+                class="list"
+                id="daftarCatatan">
+            </div>
+
+        </div>
+
+
+
+        <div class="card">
+
+            <div class="title">
+
+                <h3>
+                    Catatan hari ini
+                </h3>
+
+            </div>
+
+
+            <div class="form">
+
+
+                <div class="field">
+
+                    <label>
+                        Perasaan hari ini
+                    </label>
+
+
+                    <select id="suasana">
+
+                        <option>
+                            🌸 Tenang
+                        </option>
+
+                        <option>
+                            ✨ Senang
+                        </option>
+
+                        <option>
+                            ☁️ Lelah
+                        </option>
+
+                        <option>
+                            🌷 Bersyukur
+                        </option>
+
+                        <option>
+                            🌙 Butuh istirahat
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+
+                <div class="field">
+
+                    <label>
+                        Satu hal yang ingin diingat
+                    </label>
+
+
+                    <textarea
+                        id="catatanCepat"
+                        placeholder="Tulis satu hal kecil hari ini..."
+                    ></textarea>
+
+                </div>
+
+
+                <button
+                    class="btn"
+                    onclick="simpanCatatanHariIni()">
+
+                    Simpan catatan hari ini ♡
+
+                </button>
+
+
+            </div>
+
+
+        </div>
+
+
+    </div>
+
+
+</section>
+
+
+</main>
+
+</div>
+
+</div>
+
+
+
+<!-- =====================================================
+     MOBILE NAVIGATION
+===================================================== -->
+
+<nav class="mobile-nav">
+
+    <button
+        class="active"
+        data-halaman="beranda">
+
+        <span class="nav-icon">
+            🏠
+        </span>
+
+        Beranda
+
+    </button>
+
+
+    <button
+        data-halaman="keuangan">
+
+        <span class="nav-icon">
+            💗
+        </span>
+
+        Keuangan
+
+    </button>
+
+
+    <button
+        data-halaman="skincare">
+
+        <span class="nav-icon">
+            🧴
+        </span>
+
+        Skincare
+
+    </button>
+
+
+    <button
+        data-halaman="target">
+
+        <span class="nav-icon">
+            🎀
+        </span>
+
+        Target
+
+    </button>
+
+
+    <button
+        data-halaman="catatan">
+
+        <span class="nav-icon">
+            🌷
+        </span>
+
+        Catatan
+
+    </button>
+
+</nav>
+
+
+
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<div
+    class="modal"
+    id="modal">
+
+
+    <div class="modal-box">
+
+
+        <div class="modal-atas">
+
+
+            <h3
+                id="judulModal"
+                style="
+                    font-family:'Playfair Display';
+                    font-size:21px;
+                    margin:0 0 15px
+                ">
+
+                Tambah
+
+            </h3>
+
+
+            <button
+                class="tutup"
+                onclick="tutupModal()">
+
+                ×
+
+            </button>
+
+
+        </div>
+
+
+        <div
+            id="isiModal">
+        </div>
+
+
+    </div>
+
+
+</div>
+
+
+
+<div
+    class="toast"
+    id="toast">
+</div>
+
+
+
+<script>
+
+/* =========================================================
+   PENYIMPANAN
+========================================================= */
+
+const KUNCI =
+    "note_laeli_nurhidayah";
+
+
+function hariIni(){
+
+    return new Date()
+        .toISOString()
+        .slice(0,10);
+
+}
+
+
+const DATA_DEFAULT = {
+
+    anggaran:0,
+
+    anggaranSkincare:0,
+
+    transaksi:[],
+
+    skincare:[],
+
+    target:[],
+
+    wishlist:[],
+
+    catatan:[]
+
+};
+
+
+let data;
+
+try{
+
+    data =
+        JSON.parse(
+            localStorage.getItem(KUNCI)
+        ) || DATA_DEFAULT;
+
+}catch{
+
+    data = DATA_DEFAULT;
+
+}
+
+
+/* =========================================================
+   NORMALISASI DATA
+========================================================= */
+
+data.anggaran ??= 3000000;
+
+data.anggaranSkincare ??= 500000;
+
+data.transaksi ??= [];
+
+data.skincare ??= [];
+
+data.target ??= [];
+
+data.wishlist ??= [];
+
+data.catatan ??= [];
+
+
+function simpan(){
+
+    localStorage.setItem(
+        KUNCI,
+        JSON.stringify(data)
+    );
+
+}
+
+
+/* =========================================================
+   ELEMENT HELPER
+========================================================= */
+
+function el(id){
+
+    return document.getElementById(id);
+
+}
+
+
+/* =========================================================
+   ID AMAN
+========================================================= */
+
+function buatID(){
+
+    if(
+        window.crypto &&
+        crypto.randomUUID
+    ){
+
+        return crypto.randomUUID();
+
+    }
+
+    return (
+        Date.now().toString(36) +
+        Math.random()
+            .toString(36)
+            .slice(2)
+    );
+
+}
+
+
+/* =========================================================
+   RUPIAH
+========================================================= */
+
+function rupiah(angka){
+
+    return new Intl.NumberFormat(
+        "id-ID",
+        {
+            style:"currency",
+            currency:"IDR",
+            maximumFractionDigits:0
+        }
+    ).format(
+        Number(angka) || 0
+    );
+
+}
+
+
+/* =========================================================
+   HTML AMAN
+========================================================= */
+
+function aman(teks){
+
+    return String(
+        teks ?? ""
+    )
+    .replace(
+        /[&<>"']/g,
+        function(c){
+
+            return {
+
+                "&":"&amp;",
+                "<":"&lt;",
+                ">":"&gt;",
+                '"':"&quot;",
+                "'":"&#039;"
+
+            }[c];
+
+        }
+    );
+
+}
+
+
+/* =========================================================
+   TANGGAL
+========================================================= */
+
+function tanggal(teks){
+
+    if(!teks){
+        return "-";
+    }
+
+    return new Date(
+        teks + "T00:00:00"
+    )
+    .toLocaleDateString(
+        "id-ID",
+        {
+            day:"numeric",
+            month:"short",
+            year:"numeric"
+        }
+    );
+
+}
+
+
+/* =========================================================
+   NOTIFIKASI
+========================================================= */
+
+let toastTimer;
+
+function notifikasi(teks){
+
+    const toast =
+        el("toast");
+
+    toast.textContent =
+        teks;
+
+    toast.classList.add(
+        "tampil"
+    );
+
+    clearTimeout(
+        toastTimer
+    );
+
+    toastTimer =
+        setTimeout(
+            () => {
+
+                toast.classList.remove(
+                    "tampil"
+                );
+
+            },
+            1800
+        );
+
+}
+
+
+/* =========================================================
+   HITUNG UANG
+========================================================= */
+
+function hitungUang(){
+
+    const masuk =
+        data.transaksi
+        .filter(
+            x =>
+                x.jenis === "masuk"
+        )
+        .reduce(
+            (total,x) =>
+                total +
+                Number(x.nominal || 0),
+            0
+        );
+
+
+    const keluar =
+        data.transaksi
+        .filter(
+            x =>
+                x.jenis === "keluar"
+        )
+        .reduce(
+            (total,x) =>
+                total +
+                Number(x.nominal || 0),
+            0
+        );
+
+
+    return {
+
+        masuk,
+
+        keluar,
+
+        saldo:
+            masuk - keluar
+
+    };
+
+}
+
+
+/* =========================================================
+   ICON KATEGORI
+========================================================= */
+
+function ikonKategori(kategori){
+
+    const ikon = {
+
+        "Skincare":"🧴",
+
+        "Makanan":"🍓",
+
+        "Transportasi":"🚌",
+
+        "Belanja":"🛍️",
+
+        "Hiburan":"🎀",
+
+        "Kebutuhan":"🏠",
+
+        "Lainnya":"♡",
+
+        "Gaji / Uang masuk":"💗"
+
+    };
+
+    return ikon[kategori] || "♡";
+
+}
+
+
+/* =========================================================
+   ANIMASI ANGKA
+========================================================= */
+
+function animasiAngka(
+    element,
+    nilai
+){
+
+    if(!element){
+        return;
+    }
+
+    element.textContent =
+        rupiah(nilai);
+
+}
+
+
+/* =========================================================
+   RENDER
+========================================================= */
+
+function render(){
+
+    const uang =
+        hitungUang();
+
+
+    const persenAnggaran =
+        Math.min(
+            100,
+            data.anggaran
+                ? Math.round(
+                    uang.keluar /
+                    data.anggaran *
+                    100
+                )
+                : 0
+        );
+
+
+    const sisaAnggaran =
+        Math.max(
+            0,
+            data.anggaran -
+            uang.keluar
+        );
+
+
+    /* =====================================================
+       UANG
+    ===================================================== */
+
+    animasiAngka(
+        el("uangMasukBeranda"),
+        uang.masuk
+    );
+
+    animasiAngka(
+        el("uangMasukKeuangan"),
+        uang.masuk
+    );
+
+    animasiAngka(
+        el("uangKeluarBeranda"),
+        uang.keluar
+    );
+
+    animasiAngka(
+        el("uangKeluarKeuangan"),
+        uang.keluar
+    );
+
+    animasiAngka(
+        el("saldoBeranda"),
+        uang.saldo
+    );
+
+    animasiAngka(
+        el("saldoKeuangan"),
+        uang.saldo
+    );
+
+    animasiAngka(
+        el("anggaranBeranda"),
+        sisaAnggaran
+    );
+
+    animasiAngka(
+        el("anggaranKeuangan"),
+        data.anggaran
+    );
+
+    animasiAngka(
+        el("anggaranBesar"),
+        data.anggaran
+    );
+
+    animasiAngka(
+        el("anggaranSamping"),
+        sisaAnggaran
+    );
+
+
+    /* =====================================================
+       PROGRESS
+    ===================================================== */
+
+    el("progressAnggaran")
+        .style.width =
+        persenAnggaran + "%";
+
+
+    el("progressSamping")
+        .style.width =
+        persenAnggaran + "%";
+
+
+    el("teksAnggaran")
+        .textContent =
+        persenAnggaran +
+        "% anggaran digunakan · " +
+        rupiah(sisaAnggaran) +
+        " tersisa";
+
+
+    el("teksProgressSamping")
+        .textContent =
+        persenAnggaran +
+        "% digunakan";
+
+
+    /* =====================================================
+       GRAFIK
+    ===================================================== */
+
+    const kategori = {
+
+        Skincare:0,
+
+        Makanan:0,
+
+        Transportasi:0,
+
+        Belanja:0,
+
+        Hiburan:0,
+
+        Kebutuhan:0,
+
+        Lainnya:0
+
+    };
+
+
+    data.transaksi
+    .filter(
+        x =>
+            x.jenis === "keluar"
+    )
+    .forEach(
+        x => {
+
+            if(
+                kategori[x.kategori]
+                !== undefined
+            ){
+
+                kategori[x.kategori]
+                    += Number(
+                        x.nominal || 0
+                    );
+
+            }
+
+        }
+    );
+
+
+    const maksimum =
+        Math.max(
+            1,
+            ...Object.values(
+                kategori
+            )
+        );
+
+
+    el("grafikPengeluaran")
+        .innerHTML =
+
+        Object
+        .entries(kategori)
+        .map(
+            ([nama,nilai]) => `
+
+            <div class="baris-batang">
+
+                <div class="bagian-atas">
+
+                    <span>
+
+                        ${ikonKategori(nama)}
+                        ${nama}
+
+                    </span>
+
+                    <b>
+                        ${rupiah(nilai)}
+                    </b>
+
+                </div>
+
+                <div class="batang-luar">
+
+                    <span
+                        class="batang-dalam"
+                        style="
+                            width:
+                            ${
+                                nilai /
+                                maksimum *
+                                100
+                            }%
+                        ">
+                    </span>
+
+                </div>
+
+            </div>
+
+            `
+        )
+        .join("");
+
+
+    el("keteranganPengeluaran")
+        .textContent =
+
+        uang.keluar
+            ? rupiah(uang.keluar) +
+              " telah digunakan"
+            : "Belum ada pengeluaran";
+
+
+    /* =====================================================
+       PERHATIAN
+    ===================================================== */
+
+    let perhatian = "";
+
+
+    if(uang.saldo < 0){
+
+        perhatian += `
+
+        <div class="item">
+
+            <div class="kiri">
+
+                <div class="ikon">
+                    🚨
+                </div>
+
+                <div>
+
+                    <h4>
+                        Perhatikan saldo
+                    </h4>
+
+                    <p>
+                        Pengeluaran lebih besar
+                        daripada pemasukan.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+
+    if(persenAnggaran >= 80){
+
+        perhatian += `
+
+        <div class="item">
+
+            <div class="kiri">
+
+                <div class="ikon">
+                    ⚠️
+                </div>
+
+                <div>
+
+                    <h4>
+                        Anggaran hampir habis
+                    </h4>
+
+                    <p>
+                        ${persenAnggaran}%
+                        anggaran sudah digunakan.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+
+    const hampirHabis =
+        data.skincare.filter(
+            x =>
+                x.status ===
+                "Hampir habis"
+        ).length;
+
+
+    if(hampirHabis){
+
+        perhatian += `
+
+        <div class="item">
+
+            <div class="kiri">
+
+                <div class="ikon">
+                    🧴
+                </div>
+
+                <div>
+
+                    <h4>
+                        Stok skincare
+                    </h4>
+
+                    <p>
+                        Ada ${hampirHabis}
+                        produk hampir habis.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        `;
+
+    }
+
+
+    if(!perhatian){
+
+        perhatian = `
+
+        <div class="kosong">
+
+            Semua terlihat baik-baik saja ✿
+
+            <br>
+
+            Tetap jaga pengeluaran
+            dan rawat diri dengan baik.
+
+        </div>
+
+        `;
+
+    }
+
+
+    el("perhatian")
+        .innerHTML =
+        perhatian;
+
+
+    /* =====================================================
+       TRANSAKSI
+    ===================================================== */
+
+    el("daftarTransaksi")
+        .innerHTML =
+
+        data.transaksi.length
+
+        ?
+
+        data.transaksi
+        .slice()
+        .reverse()
+        .map(
+            x => `
+
+            <div class="item">
+
+                <div class="kiri">
+
+                    <div class="ikon">
+
+                        ${
+                            x.jenis === "masuk"
+                                ? "💗"
+                                : "🛍️"
+                        }
+
+                    </div>
+
+
+                    <div>
+
+                        <h4>
+                            ${aman(x.nama)}
+                        </h4>
+
+                        <p>
+
+                            ${aman(x.kategori)}
+
+                            ·
+
+                            ${tanggal(x.tanggal)}
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div
+                    style="
+                        display:flex;
+                        align-items:center;
+                        gap:3px
+                    "
+                >
+
+                    <span
+                        class="
+                            uang
+                            ${
+                                x.jenis === "masuk"
+                                    ? "green"
+                                    : "red"
+                            }
+                        "
+                    >
+
+                        ${
+                            x.jenis === "masuk"
+                                ? "+"
+                                : "−"
+                        }
+
+                        ${rupiah(x.nominal)}
+
+                    </span>
+
+
+                    <button
+                        class="hapus"
+                        onclick="
+                            hapusData(
+                                'transaksi',
+                                '${x.id}'
+                            )
+                        "
+                        aria-label="Hapus transaksi"
+                    >
+
+                        ×
+
+                    </button>
+
+                </div>
+
+            </div>
+
+            `
+        )
+        .join("")
+
+        :
+
+        `
+
+        <div class="kosong">
+
+            Belum ada transaksi.
+
+            <br>
+
+            Yuk mulai mencatat pemasukan
+            dan pengeluaranmu ♡
+
+        </div>
+
+        `;
+
+
+    /* =====================================================
+       SKINCARE
+    ===================================================== */
+
+    const pengeluaranSkincare =
+        data.transaksi
+        .filter(
+            x =>
+                x.jenis === "keluar" &&
+                x.kategori === "Skincare"
+        )
+        .reduce(
+            (total,x) =>
+                total +
+                Number(x.nominal || 0),
+            0
+        );
+
+
+    const persenSkincare =
+        Math.min(
+            100,
+            data.anggaranSkincare
+                ? Math.round(
+                    pengeluaranSkincare /
+                    data.anggaranSkincare *
+                    100
+                )
+                : 0
+        );
+
+
+    animasiAngka(
+        el("anggaranSkincare"),
+        data.anggaranSkincare
+    );
+
+
+    animasiAngka(
+        el("skincareTerpakai"),
+        pengeluaranSkincare
+    );
+
+
+    el("progressSkincare")
+        .style.width =
+        persenSkincare + "%";
+
+
+    el("teksSkincare")
+        .textContent =
+        persenSkincare +
+        "% anggaran skincare digunakan";
+
+
+    /* =====================================================
+       DAFTAR SKINCARE
+    ===================================================== */
+
+    el("daftarSkincare")
+        .innerHTML =
+
+        data.skincare.length
+
+        ?
+
+        data.skincare
+        .map(
+            x => `
+
+            <div class="produk">
+
+                <div class="botol">
+                    🧴
+                </div>
+
+
+                <div style="flex:1;min-width:0">
+
+                    <h4>
+                        ${aman(x.nama)}
+                    </h4>
+
+                    <p>
+
+                        ${aman(x.jenis)}
+
+                        ·
+
+                        ${aman(x.ukuran || "")}
+
+                        ·
+
+                        ${aman(x.status)}
+
+                    </p>
+
+                </div>
+
+
+                <span class="badge">
+
+                    ${rupiah(x.harga)}
+
+                </span>
+
+
+                <button
+                    class="hapus"
+                    onclick="
+                        hapusData(
+                            'skincare',
+                            '${x.id}'
+                        )
+                    "
+                    aria-label="Hapus produk"
+                >
+
+                    ×
+
+                </button>
+
+            </div>
+
+            `
+        )
+        .join("")
+
+        :
+
+        `
+
+        <div class="kosong">
+
+            Rak skincare masih kosong.
+
+            <br>
+
+            Tambahkan produk skincare
+            yang kamu gunakan bulan ini 🧴
+
+        </div>
+
+        `;
+
+
+    /* =====================================================
+       TARGET
+    ===================================================== */
+
+    el("daftarTarget")
+        .innerHTML =
+
+        data.target.length
+
+        ?
+
+        data.target
+        .map(
+            x => {
+
+                const target =
+                    Number(x.target) || 0;
+
+                const terkumpul =
+                    Number(x.terkumpul) || 0;
+
+                const persen =
+                    target
+                        ? Math.min(
+                            100,
+                            terkumpul /
+                            target *
+                            100
+                        )
+                        : 0;
+
+                return `
+
+                <div class="item">
+
+                    <div style="min-width:0">
+
+                        <h4>
+                            🎀 ${aman(x.nama)}
+                        </h4>
+
+                        <p>
+
+                            Target
+                            ${rupiah(target)}
+
+                            ·
+
+                            Terkumpul
+                            ${rupiah(terkumpul)}
+
+                        </p>
+
+
+                        <div
+                            class="batang-luar"
+                            style="
+                                margin-top:7px;
+                                width:min(190px,100%)
+                            "
+                        >
+
+                            <span
+                                class="batang-dalam"
+                                style="
+                                    width:
+                                    ${persen}%
+                                "
+                            >
+                            </span>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        class="hapus"
+                        onclick="
+                            hapusData(
+                                'target',
+                                '${x.id}'
+                            )
+                        "
+                        aria-label="Hapus target"
+                    >
+
+                        ×
+
+                    </button>
+
+                </div>
+
+                `;
+
+            }
+        )
+        .join("")
+
+        :
+
+        `
+
+        <div class="kosong">
+
+            Belum ada target tabungan.
+
+            <br>
+
+            Buat target kecil untuk
+            sesuatu yang kamu inginkan ✨
+
+        </div>
+
+        `;
+
+
+    /* =====================================================
+       WISHLIST
+    ===================================================== */
+
+    el("daftarWishlist")
+        .innerHTML =
+
+        data.wishlist.length
+
+        ?
+
+        data.wishlist
+        .map(
+            x => `
+
+            <div class="item">
+
+                <div class="kiri">
+
+                    <input
+                        class="ceklis"
+                        type="checkbox"
+                        ${
+                            x.selesai
+                                ? "checked"
+                                : ""
+                        }
+
+                        onchange="
+                            ubahWishlist(
+                                '${x.id}'
+                            )
+                        "
+                    >
+
+
+                    <div>
+
+                        <h4
+                            style="
+                                ${
+                                    x.selesai
+                                        ? "text-decoration:line-through;opacity:.6"
+                                        : ""
+                                }
+                            "
+                        >
+
+                            ${aman(x.nama)}
+
+                        </h4>
+
+                        <p>
+                            ${rupiah(x.harga)}
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="hapus"
+                    onclick="
+                        hapusData(
+                            'wishlist',
+                            '${x.id}'
+                        )
+                    "
+                    aria-label="Hapus wishlist"
+                >
+
+                    ×
+
+                </button>
+
+            </div>
+
+            `
+        )
+        .join("")
+
+        :
+
+        `
+
+        <div class="kosong">
+
+            Wishlist masih kosong ♡
+
+            <br>
+
+            Tambahkan barang yang
+            sedang kamu inginkan.
+
+        </div>
+
+        `;
+
+
+    /* =====================================================
+       CATATAN
+    ===================================================== */
+
+    el("daftarCatatan")
+        .innerHTML =
+
+        data.catatan.length
+
+        ?
+
+        data.catatan
+        .slice()
+        .reverse()
+        .map(
+            x => `
+
+            <div
+                class="item"
+                style="
+                    align-items:flex-start
+                "
+            >
+
+                <div style="min-width:0">
+
+                    <h4>
+
+                        ${aman(x.suasana)}
+
+                        ·
+
+                        ${tanggal(x.tanggal)}
+
+                    </h4>
+
+
+                    <p
+                        style="
+                            white-space:pre-wrap;
+                            margin-top:6px
+                        "
+                    >
+
+                        ${aman(x.isi)}
+
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="hapus"
+                    onclick="
+                        hapusData(
+                            'catatan',
+                            '${x.id}'
+                        )
+                    "
+                    aria-label="Hapus catatan"
+                >
+
+                    ×
+
+                </button>
+
+            </div>
+
+            `
+        )
+        .join("")
+
+        :
+
+        `
+
+        <div class="kosong">
+
+            Belum ada catatan harian.
+
+            <br>
+
+            Tulis sedikit tentang
+            hari kamu 🌷
+
+        </div>
+
+        `;
+
+}
+
+
+/* =========================================================
+   HAPUS
+========================================================= */
+
+function hapusData(
+    jenis,
+    id
+){
+
+    const yakin =
+        confirm(
+            "Hapus data ini?"
+        );
+
+    if(!yakin){
+        return;
+    }
+
+
+    data[jenis] =
+        data[jenis].filter(
+            item =>
+                item.id !== id
+        );
+
+
+    simpan();
+
+    render();
+
+    notifikasi(
+        "Data berhasil dihapus"
+    );
+
+}
+
+
+/* =========================================================
+   WISHLIST
+========================================================= */
+
+function ubahWishlist(id){
+
+    const item =
+        data.wishlist.find(
+            x =>
+                x.id === id
+        );
+
+
+    if(!item){
+        return;
+    }
+
+
+    item.selesai =
+        !item.selesai;
+
+
+    simpan();
+
+    render();
+
+    notifikasi(
+        item.selesai
+            ? "Wishlist ditandai selesai ♡"
+            : "Wishlist dibuka kembali"
+    );
+
+}
+
+
+/* =========================================================
+   UBAH ANGGARAN
+========================================================= */
+
+function ubahAnggaran(){
+
+    const nilai =
+        prompt(
+            "Masukkan anggaran bulan ini (Rp):",
+            data.anggaran
+        );
+
+
+    if(
+        nilai !== null &&
+        nilai.trim() !== "" &&
+        !isNaN(nilai) &&
+        Number(nilai) >= 0
+    ){
+
+        data.anggaran =
+            Number(nilai);
+
+
+        simpan();
+
+        render();
+
+        notifikasi(
+            "Anggaran berhasil diperbarui ♡"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   UBAH ANGGARAN SKINCARE
+========================================================= */
+
+function ubahAnggaranSkincare(){
+
+    const nilai =
+        prompt(
+            "Masukkan anggaran skincare bulan ini (Rp):",
+            data.anggaranSkincare
+        );
+
+
+    if(
+        nilai !== null &&
+        nilai.trim() !== "" &&
+        !isNaN(nilai) &&
+        Number(nilai) >= 0
+    ){
+
+        data.anggaranSkincare =
+            Number(nilai);
+
+
+        simpan();
+
+        render();
+
+        notifikasi(
+            "Anggaran skincare diperbarui 🧴"
+        );
+
+    }
+
+}
+
+
+/* =========================================================
+   MODAL
+========================================================= */
+
+function bukaModal(jenis){
+
+    let judul = "";
+
+    let isi = "";
+
+
+    /* =====================================================
+       TRANSAKSI
+    ===================================================== */
+
+    if(jenis === "transaksi"){
+
+        judul =
+            "Tambah transaksi";
+
+
+        isi = `
+
+        <form
+            class="form"
+            onsubmit="
+                tambahTransaksi(event)
+            "
+        >
+
+
+            <div class="dua">
+
+                <div class="field">
+
+                    <label>
+                        Jenis transaksi
+                    </label>
+
+                    <select
+                        id="jenisTransaksi"
+                        onchange="
+                            ubahKategoriTransaksi()
+                        "
+                    >
+
+                        <option value="keluar">
+                            Pengeluaran
+                        </option>
+
+                        <option value="masuk">
+                            Pemasukan
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Tanggal
+                    </label>
+
+                    <input
+                        id="tanggalTransaksi"
+                        type="date"
+                        value="${hariIni()}"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Nama / keterangan
+                </label>
+
+                <input
+                    id="namaTransaksi"
+                    placeholder="Contoh: beli serum"
+                    required
+                >
+
+            </div>
+
+
+            <div class="dua">
+
+                <div class="field">
+
+                    <label>
+                        Nominal
+                    </label>
+
+                    <input
+                        id="nominalTransaksi"
+                        type="number"
+                        min="0"
+                        inputmode="numeric"
+                        placeholder="50000"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Kategori
+                    </label>
+
+                    <select
+                        id="kategoriTransaksi"
+                    >
+
+                        <option>
+                            Skincare
+                        </option>
+
+                        <option>
+                            Makanan
+                        </option>
+
+                        <option>
+                            Transportasi
+                        </option>
+
+                        <option>
+                            Belanja
+                        </option>
+
+                        <option>
+                            Hiburan
+                        </option>
+
+                        <option>
+                            Kebutuhan
+                        </option>
+
+                        <option>
+                            Lainnya
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="btn"
+                type="submit"
+            >
+
+                Simpan transaksi
+
+            </button>
+
+
+        </form>
+
+        `;
+
+    }
+
+
+    /* =====================================================
+       SKINCARE
+    ===================================================== */
+
+    if(jenis === "produk"){
+
+        judul =
+            "Tambah produk skincare";
+
+
+        isi = `
+
+        <form
+            class="form"
+            onsubmit="
+                tambahSkincare(event)
+            "
+        >
+
+
+            <div class="field">
+
+                <label>
+                    Nama produk
+                </label>
+
+                <input
+                    id="namaSkincare"
+                    placeholder="Contoh: Facial Wash"
+                    required
+                >
+
+            </div>
+
+
+            <div class="dua">
+
+                <div class="field">
+
+                    <label>
+                        Jenis produk
+                    </label>
+
+                    <select
+                        id="jenisSkincare"
+                    >
+
+                        <option>
+                            Pembersih wajah
+                        </option>
+
+                        <option>
+                            Toner
+                        </option>
+
+                        <option>
+                            Serum
+                        </option>
+
+                        <option>
+                            Pelembap
+                        </option>
+
+                        <option>
+                            Sunscreen
+                        </option>
+
+                        <option>
+                            Masker
+                        </option>
+
+                        <option>
+                            Bodycare
+                        </option>
+
+                        <option>
+                            Lainnya
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Harga
+                    </label>
+
+                    <input
+                        id="hargaSkincare"
+                        type="number"
+                        min="0"
+                        inputmode="numeric"
+                        required
+                    >
+
+                </div>
+
+            </div>
+
+
+            <div class="dua">
+
+                <div class="field">
+
+                    <label>
+                        Ukuran / stok
+                    </label>
+
+                    <input
+                        id="ukuranSkincare"
+                        placeholder="50 ml"
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Status
+                    </label>
+
+                    <select
+                        id="statusSkincare"
+                    >
+
+                        <option>
+                            Tersedia
+                        </option>
+
+                        <option>
+                            Hampir habis
+                        </option>
+
+                        <option>
+                            Ingin dibeli
+                        </option>
+
+                    </select>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="btn"
+                type="submit"
+            >
+
+                Simpan ke rak skincare
+
+            </button>
+
+
+        </form>
+
+        `;
+
+    }
+
+
+    /* =====================================================
+       TARGET
+    ===================================================== */
+
+    if(jenis === "target"){
+
+        judul =
+            "Tambah target tabungan";
+
+
+        isi = `
+
+        <form
+            class="form"
+            onsubmit="
+                tambahTarget(event)
+            "
+        >
+
+
+            <div class="field">
+
+                <label>
+                    Nama target
+                </label>
+
+                <input
+                    id="namaTarget"
+                    placeholder="Contoh: Tabungan skincare"
+                    required
+                >
+
+            </div>
+
+
+            <div class="dua">
+
+                <div class="field">
+
+                    <label>
+                        Target nominal
+                    </label>
+
+                    <input
+                        id="nominalTarget"
+                        type="number"
+                        min="0"
+                        inputmode="numeric"
+                        required
+                    >
+
+                </div>
+
+
+                <div class="field">
+
+                    <label>
+                        Sudah terkumpul
+                    </label>
+
+                    <input
+                        id="terkumpulTarget"
+                        type="number"
+                        min="0"
+                        inputmode="numeric"
+                        value="0"
+                    >
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="btn"
+                type="submit"
+            >
+
+                Simpan target
+
+            </button>
+
+
+        </form>
+
+        `;
+
+    }
+
+
+    /* =====================================================
+       WISHLIST
+    ===================================================== */
+
+    if(jenis === "wishlist"){
+
+        judul =
+            "Tambah wishlist";
+
+
+        isi = `
+
+        <form
+            class="form"
+            onsubmit="
+                tambahWishlist(event)
+            "
+        >
+
+
+            <div class="field">
+
+                <label>
+                    Nama barang
+                </label>
+
+                <input
+                    id="namaWishlist"
+                    placeholder="Contoh: Lip tint impian"
+                    required
+                >
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Perkiraan harga
+                </label>
+
+                <input
+                    id="hargaWishlist"
+                    type="number"
+                    min="0"
+                    inputmode="numeric"
+                    required
+                >
+
+            </div>
+
+
+            <button
+                class="btn"
+                type="submit"
+            >
+
+                Tambahkan ke wishlist
+
+            </button>
+
+
+        </form>
+
+        `;
+
+    }
+
+
+    /* =====================================================
+       CATATAN
+    ===================================================== */
+
+    if(jenis === "catatan"){
+
+        judul =
+            "Buat catatan baru";
+
+
+        isi = `
+
+        <form
+            class="form"
+            onsubmit="
+                tambahCatatan(event)
+            "
+        >
+
+
+            <div class="field">
+
+                <label>
+                    Perasaan hari ini
+                </label>
+
+                <select
+                    id="suasanaCatatan"
+                >
+
+                    <option>
+                        🌸 Tenang
+                    </option>
+
+                    <option>
+                        ✨ Senang
+                    </option>
+
+                    <option>
+                        ☁️ Lelah
+                    </option>
+
+                    <option>
+                        🌷 Bersyukur
+                    </option>
+
+                    <option>
+                        🌙 Butuh istirahat
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <div class="field">
+
+                <label>
+                    Isi catatan
+                </label>
+
+                <textarea
+                    id="isiCatatan"
+                    required
+                    placeholder="Ceritakan sedikit tentang hari ini..."
+                ></textarea>
+
+            </div>
+
+
+            <button
+                class="btn"
+                type="submit"
+            >
+
+                Simpan catatan ♡
+
+            </button>
+
+
+        </form>
+
+        `;
+
+    }
+
+
+    el("judulModal")
+        .textContent =
+        judul;
+
+
+    el("isiModal")
+        .innerHTML =
+        isi;
+
+
+    el("modal")
+        .classList.add(
+            "tampil"
+        );
+
+
+    setTimeout(
+        () => {
+
+            const first =
+                el("isiModal")
+                .querySelector(
+                    "input,textarea,select"
+                );
+
+            if(first){
+
+                first.focus();
+
+            }
+
+        },
+        250
+    );
+
+}
+
+
+/* =========================================================
+   KATEGORI TRANSAKSI
+========================================================= */
+
+function ubahKategoriTransaksi(){
+
+    const jenis =
+        el("jenisTransaksi");
+
+    const kategori =
+        el("kategoriTransaksi");
+
+
+    if(
+        !jenis ||
+        !kategori
+    ){
+        return;
+    }
+
+
+    if(
+        jenis.value === "masuk"
+    ){
+
+        kategori.innerHTML = `
+
+            <option>
+                Gaji / Uang masuk
+            </option>
+
+            <option>
+                Bonus
+            </option>
+
+            <option>
+                Hadiah
+            </option>
+
+            <option>
+                Lainnya
+            </option>
+
+        `;
+
+    }else{
+
+        kategori.innerHTML = `
+
+            <option>
+                Skincare
+            </option>
+
+            <option>
+                Makanan
+            </option>
+
+            <option>
+                Transportasi
+            </option>
+
+            <option>
+                Belanja
+            </option>
+
+            <option>
+                Hiburan
+            </option>
+
+            <option>
+                Kebutuhan
+            </option>
+
+            <option>
+                Lainnya
+            </option>
+
+        `;
+
+    }
+
+}
+
+
+/* =========================================================
+   TUTUP MODAL
+========================================================= */
+
+function tutupModal(){
+
+    el("modal")
+        .classList.remove(
+            "tampil"
+        );
+
+}
+
+
+/* =========================================================
+   TAMBAH TRANSAKSI
+========================================================= */
+
+function tambahTransaksi(event){
+
+    event.preventDefault();
+
+
+    const jenis =
+        el("jenisTransaksi").value;
+
+    const tanggalValue =
+        el("tanggalTransaksi").value;
+
+    const nama =
+        el("namaTransaksi")
+        .value
+        .trim();
+
+    const nominal =
+        Number(
+            el("nominalTransaksi").value
+        );
+
+    const kategori =
+        el("kategoriTransaksi").value;
+
+
+    if(
+        !nama ||
+        !tanggalValue ||
+        !nominal ||
+        nominal < 0
+    ){
+
+        notifikasi(
+            "Lengkapi data transaksi dulu ♡"
+        );
+
+        return;
+
+    }
+
+
+    data.transaksi.push({
+
+        id:
+            buatID(),
+
+        jenis,
+
+        tanggal:
+            tanggalValue,
+
+        nama,
+
+        nominal,
+
+        kategori
+
+    });
+
+
+    simpan();
+
+    tutupModal();
+
+    render();
+
+    notifikasi(
+        "Transaksi berhasil disimpan ♡"
+    );
+
+}
+
+
+/* =========================================================
+   TAMBAH SKINCARE
+========================================================= */
+
+function tambahSkincare(event){
+
+    event.preventDefault();
+
+
+    const nama =
+        el("namaSkincare")
+        .value
+        .trim();
+
+    const jenis =
+        el("jenisSkincare")
+        .value;
+
+    const harga =
+        Number(
+            el("hargaSkincare")
+            .value
+        );
+
+    const ukuran =
+        el("ukuranSkincare")
+        .value
+        .trim();
+
+    const status =
+        el("statusSkincare")
+        .value;
+
+
+    if(
+        !nama ||
+        harga < 0
+    ){
+
+        notifikasi(
+            "Lengkapi data skincare dulu 🧴"
+        );
+
+        return;
+
+    }
+
+
+    data.skincare.push({
+
+        id:
+            buatID(),
+
+        nama,
+
+        jenis,
+
+        harga,
+
+        ukuran,
+
+        status
+
+    });
+
+
+    simpan();
+
+    tutupModal();
+
+    render();
+
+    notifikasi(
+        "Produk skincare ditambahkan 🧴"
+    );
+
+}
+
+
+/* =========================================================
+   TAMBAH TARGET
+========================================================= */
+
+function tambahTarget(event){
+
+    event.preventDefault();
+
+
+    const nama =
+        el("namaTarget")
+        .value
+        .trim();
+
+    const target =
+        Number(
+            el("nominalTarget")
+            .value
+        );
+
+    const terkumpul =
+        Number(
+            el("terkumpulTarget")
+            .value
+        ) || 0;
+
+
+    if(
+        !nama ||
+        target <= 0
+    ){
+
+        notifikasi(
+            "Masukkan target yang benar 🎀"
+        );
+
+        return;
+
+    }
+
+
+    data.target.push({
+
+        id:
+            buatID(),
+
+        nama,
+
+        target,
+
+        terkumpul:
+            Math.min(
+                terkumpul,
+                target
+            )
+
+    });
+
+
+    simpan();
+
+    tutupModal();
+
+    render();
+
+    notifikasi(
+        "Target berhasil dibuat 🎀"
+    );
+
+}
+
+
+/* =========================================================
+   TAMBAH WISHLIST
+========================================================= */
+
+function tambahWishlist(event){
+
+    event.preventDefault();
+
+
+    const nama =
+        el("namaWishlist")
+        .value
+        .trim();
+
+    const harga =
+        Number(
+            el("hargaWishlist")
+            .value
+        );
+
+
+    if(
+        !nama ||
+        harga < 0
+    ){
+
+        notifikasi(
+            "Lengkapi wishlist dulu ♡"
+        );
+
+        return;
+
+    }
+
+
+    data.wishlist.push({
+
+        id:
+            buatID(),
+
+        nama,
+
+        harga,
+
+        selesai:false
+
+    });
+
+
+    simpan();
+
+    tutupModal();
+
+    render();
+
+    notifikasi(
+        "Wishlist ditambahkan ♡"
+    );
+
+}
+
+
+/* =========================================================
+   TAMBAH CATATAN
+========================================================= */
+
+function tambahCatatan(event){
+
+    event.preventDefault();
+
+
+    const suasana =
+        el("suasanaCatatan")
+        .value;
+
+    const isi =
+        el("isiCatatan")
+        .value
+        .trim();
+
+
+    if(!isi){
+
+        notifikasi(
+            "Isi catatannya dulu ya 🌷"
+        );
+
+        return;
+
+    }
+
+
+    data.catatan.push({
+
+        id:
+            buatID(),
+
+        suasana,
+
+        isi,
+
+        tanggal:
+            hariIni()
+
+    });
+
+
+    simpan();
+
+    tutupModal();
+
+    render();
+
+    notifikasi(
+        "Catatan berhasil disimpan 🌷"
+    );
+
+}
+
+
+/* =========================================================
+   CATATAN HARI INI
+========================================================= */
+
+function simpanCatatanHariIni(){
+
+    const input =
+        el("catatanCepat");
+
+
+    const isi =
+        input.value.trim();
+
+
+    if(!isi){
+
+        notifikasi(
+            "Tulis sedikit dulu ya ♡"
+        );
+
+        input.focus();
+
+        return;
+
+    }
+
+
+    data.catatan.push({
+
+        id:
+            buatID(),
+
+        suasana:
+            el("suasana").value,
+
+        isi,
+
+        tanggal:
+            hariIni()
+
+    });
+
+
+    input.value = "";
+
+
+    simpan();
+
+    render();
+
+    notifikasi(
+        "Catatan hari ini tersimpan 🌷"
+    );
+
+}
+
+
+/* =========================================================
+   NAVIGASI
+========================================================= */
+
+function bukaHalaman(nama){
+
+    document
+    .querySelectorAll(
+        ".nav button, .mobile-nav button"
+    )
+    .forEach(
+        tombol => {
+
+            tombol.classList.toggle(
+                "active",
+                tombol.dataset.halaman === nama
+            );
+
+        }
+    );
+
+
+    document
+    .querySelectorAll(
+        ".page"
+    )
+    .forEach(
+        halaman => {
+
+            halaman.classList.toggle(
+                "active",
+                halaman.id === nama
+            );
+
+        }
+    );
+
+
+    window.scrollTo({
+
+        top:0,
+
+        behavior:"smooth"
+
+    });
+
+}
+
+
+document
+.querySelectorAll(
+    ".nav button, .mobile-nav button"
+)
+.forEach(
+    tombol => {
+
+        tombol.addEventListener(
+            "click",
+            () => {
+
+                bukaHalaman(
+                    tombol.dataset.halaman
+                );
+
+            }
+        );
+
+    }
+);
+
+
+/* =========================================================
+   TUTUP MODAL KLIK LUAR
+========================================================= */
+
+el("modal")
+.addEventListener(
+    "click",
+    function(event){
+
+        if(
+            event.target === this
+        ){
+
+            tutupModal();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   ESC UNTUK TUTUP MODAL
+========================================================= */
+
+document.addEventListener(
+    "keydown",
+    event => {
+
+        if(
+            event.key === "Escape"
+        ){
+
+            tutupModal();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   RIPPLE EFFECT
+========================================================= */
+
+document.addEventListener(
+    "click",
+    function(event){
+
+        const tombol =
+            event.target.closest(
+                ".btn, .nav button, .mobile-nav button"
+            );
+
+
+        if(!tombol){
+            return;
+        }
+
+
+        const rect =
+            tombol.getBoundingClientRect();
+
+
+        const ripple =
+            document.createElement(
+                "span"
+            );
+
+
+        const size =
+            Math.max(
+                rect.width,
+                rect.height
+            );
+
+
+        ripple.className =
+            "ripple";
+
+
+        ripple.style.width =
+            size + "px";
+
+        ripple.style.height =
+            size + "px";
+
+
+        ripple.style.left =
+            (
+                event.clientX -
+                rect.left -
+                size / 2
+            ) + "px";
+
+
+        ripple.style.top =
+            (
+                event.clientY -
+                rect.top -
+                size / 2
+            ) + "px";
+
+
+        tombol.style.position =
+            "relative";
+
+        tombol.style.overflow =
+            "hidden";
+
+
+        tombol.appendChild(
+            ripple
+        );
+
+
+        setTimeout(
+            () => {
+
+                ripple.remove();
+
+            },
+            500
+        );
+
+    }
+);
+
+
+/* =========================================================
+   SWIPE MODAL DI HP
+========================================================= */
+
+let modalTouchStart = 0;
+
+el("modal")
+.addEventListener(
+    "touchstart",
+    event => {
+
+        modalTouchStart =
+            event.touches[0].clientY;
+
+    },
+    {
+        passive:true
+    }
+);
+
+
+el("modal")
+.addEventListener(
+    "touchend",
+    event => {
+
+        const end =
+            event.changedTouches[0].clientY;
+
+        const jarak =
+            end -
+            modalTouchStart;
+
+
+        if(
+            jarak > 100 &&
+            window.innerWidth <= 600
+        ){
+
+            tutupModal();
+
+        }
+
+    },
+    {
+        passive:true
+    }
+);
+
+
+/* =========================================================
+   BULAN
+========================================================= */
+
+el("bulan")
+.textContent =
+
+new Date()
+.toLocaleDateString(
+    "id-ID",
+    {
+        month:"long",
+        year:"numeric"
+    }
+);
+
+
+/* =========================================================
+   LOAD
+========================================================= */
+
+render();
+
+</script>
+
+</body>
+</html>
